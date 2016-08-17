@@ -1,0 +1,5 @@
+name: SimpleFlutterApp
+description: A new flutter project.
+dependencies:
+  flutter:
+    path: ../../flutter-sdk/packages/flutter
