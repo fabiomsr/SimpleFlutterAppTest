@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../constant.dart';
+import '../../drawer/drawer.dart';
+
 class Home extends StatefulWidget{
 
   Home({ Key key }) : super(key: key);
@@ -14,8 +17,9 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Simple Flutter App')
+        title: new Text(kAppName)
       ),
+      drawer: new NavigationDrawer(),
       body: new Center(
         child: new Text('Home')
       )

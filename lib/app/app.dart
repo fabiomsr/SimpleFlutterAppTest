@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../module/home/Home.dart';
+import '../constant.dart';
+import '../module/home/home.dart';
 
 final ThemeData _kLightTheme = new ThemeData(
   brightness: Brightness.light,
@@ -12,21 +13,21 @@ final ThemeData _kDarkTheme = new ThemeData(
   primarySwatch: Colors.lightBlue
 );
 
-class TotalRecipeApp extends StatefulWidget {
-  TotalRecipeApp({ Key key }) : super(key: key);
+class App extends StatefulWidget {
+  App({ Key key }) : super(key: key);
 
   @override
-  TotalRecipeAppState createState() => new TotalRecipeAppState();
+  AppState createState() => new AppState();
 }
 
-class TotalRecipeAppState extends State<TotalRecipeApp> {
+class AppState extends State<App> {
   bool _useLightTheme = true;
 
   @override
   Widget build(BuildContext context) {
 
     return new MaterialApp(
-        title: 'Total Recipe',
+        title: kAppName,
         theme: _useLightTheme ? _kLightTheme : _kDarkTheme,
         home: new Home()
     );

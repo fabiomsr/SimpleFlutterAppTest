@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'app/TotalRecipeApp.dart';
+import 'app/app.dart';
 
 void main() {
-  runApp( new TotalRecipeApp() );
+  runApp( new App() );
 }
