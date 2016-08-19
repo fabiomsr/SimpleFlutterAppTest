@@ -3,3 +3,10 @@ description: A new flutter project.
 dependencies:
   flutter:
     path: ../../flutter-sdk/packages/flutter
+
+dev_dependencies:
+  test: any # flutter_test provides the version constraints
+  flutter_test:
+    path: ../../flutter-sdk/packages/flutter_test
+  flutter_driver:
+    path: ../../flutter-sdk/packages/flutter_driver
