@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
-import '../module/home/home.dart';
+import '../module/home/home_screen.dart';
 
 final ThemeData _kLightTheme = new ThemeData(
   brightness: Brightness.light,

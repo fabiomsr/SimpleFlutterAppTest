@@ -17,7 +17,6 @@ class Injector {
     _flavor = flavor;
   }
 
-
   factory Injector() {
     return _singleton;
   }
