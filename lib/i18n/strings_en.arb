@@ -1,0 +1,15 @@
+{
+  "tabBooks": "Books",
+  "@tabBooks":{
+    "description": "Label for the Books tab",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "tabFavorites": "Favorites",
+  "@tabFavorites":{
+    "description": "Label for the Favorites tab",
+    "type": "text",
+    "placeholders": {}
+  }
+}

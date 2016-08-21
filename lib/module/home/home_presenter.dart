@@ -2,6 +2,7 @@
 import '../../injection/dependency_injection.dart';
 import '../../model/book.dart';
 import '../../data/book/book_data.dart';
+import '../../util/logger.dart';
 
 abstract class HomeViewContract{
   void onLoadBookComplete(Set<Book> books);
@@ -21,11 +22,15 @@ class HomePresenter {
 
   void loadBooks() {
     _bookRepository.search()
-                   .then((bookDTOs) => bookDTOs.map((bookDTO) =>
-                                               _bookMapper.toModel(bookDTO))
-                                       .toSet())
+                   .then((bookDTOs) =>
+                          bookDTOs.map((bookDTO) => _bookMapper.toModel(bookDTO))
+                                  .where((book) => book != null)
+                                  .toSet())
                    .then((books) => _view.onLoadBookComplete(books))
-                   .catchError((onError) => _view.onLoadBookError());
+                   .catchError((onError) {
+                     logError(message: onError.toString());
+                     _view.onLoadBookError();
+                   });
   }
 
 }

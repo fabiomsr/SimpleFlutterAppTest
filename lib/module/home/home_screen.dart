@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../constant.dart';
 import '../../drawer/drawer.dart';
 import '../../model/book.dart';
+import '../../util/logger.dart';
+import '../../strings.dart';
 import 'home_presenter.dart';
 
 class Home extends StatefulWidget{
@@ -25,11 +27,11 @@ class HomeState extends State<Home> implements HomeViewContract{
   }
 
   void onLoadBookComplete(Set<Book> books){
-    print("Home load books complete, book count: ${books.length}");
+    logDebug(message: "Home load books complete, book count: ${books.length}");
   }
 
   void onLoadBookError(){
-    print("Home load books error :(");
+    logError(message: "Home load books error :(");
   }
 
   @override
@@ -40,7 +42,7 @@ class HomeState extends State<Home> implements HomeViewContract{
       ),
       drawer: new NavigationDrawer(),
       body: new Center(
-        child: new Text('Home')
+        child: new Text(AppStrings.of(context).tabBooks())
       )
     );
   }

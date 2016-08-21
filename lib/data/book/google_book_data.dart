@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/http.dart' as http;
 
 import 'book_data.dart';
+import '../exceptions.dart';
 
 class GoogleBookRepository implements BookRepository{
 
@@ -15,19 +16,15 @@ class GoogleBookRepository implements BookRepository{
           final String jsonBody = response.body;
           final statusCode = response.statusCode;
 
-          if(jsonBody == null){
-            // TODO: Throw Error
-          }
-
-          if(statusCode < 200 || statusCode >= 300) {
-            // TODO: Throw Error
+          if(statusCode < 200 || statusCode >= 300 || jsonBody == null) {
+            throw new FetchdataException("Error while getting books [StatusCode:$statusCode, Error:${response.error}]");
           }
 
           final booksContainer = _decoder.convert(jsonBody);
           final List bookItems  = booksContainer['items'];
 
           return bookItems.map( (raw) => new BookDTO.fromMap(raw) )
-                          .toList();
+                         .toList();
       });
   }
 

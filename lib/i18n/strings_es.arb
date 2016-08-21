@@ -1,0 +1,15 @@
+{
+  "tabBooks": "Libros",
+  "@tabBooks":{
+    "description": "Título para la pestaña libros",
+    "type": "text",
+    "placeholders": {}
+  },
+
+  "tabFavorites": "Favoritos",
+  "@tabFavorites":{
+    "description": "Título para la pestaña favoritos",
+    "type": "text",
+    "placeholders": {}
+  }
+}

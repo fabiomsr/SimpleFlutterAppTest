@@ -1,1 +1,1 @@
-const String kAppName = 'My Contacts';
+const String kAppName = 'Libros';

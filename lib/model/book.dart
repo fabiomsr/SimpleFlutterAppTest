@@ -7,8 +7,8 @@ class Author {
 }
 
 class Category {
-  final String categorie;
-  Category(this.categorie);
+  final String name;
+  Category(this.name);
 }
 
 class Book {
@@ -21,16 +21,57 @@ class Book {
   final Set<Category> categories;
 
   Book(this.id, this.title, this.publishedDate, this.language, this.pageCount, this.authors, this.categories);
+
+  int get hashCode {
+     int result = 17;
+     result = 37 * result + id.hashCode;
+     result = 37 * result + title.hashCode;
+     result = 37 * result + publishedDate.hashCode;
+     result = 37 * result + pageCount.hashCode;
+     return result;
+   }
+
+   bool operator ==(other) {
+     if (other is! Book) return false;
+     return other.id == id;
+   }
+
+  String toString(){
+    return '{ id:$id, title:$title }';
+  }
+
 }
 
 
 class BookMapper extends Mapper<BookDTO, Book> {
 
-    Book toModel(BookDTO bookDto){
-      // TODO: Convert DTO to model
-      return new Book("","","","",0, new Set<Author>(), new Set<Category>());
+    Book toModel(BookDTO bookDTO){
+      if(bookDTO.id == null || bookDTO.title == null){
+        return null;
+      }
+
+      final id = bookDTO.id;
+      final title = bookDTO.title;
+      final publishedDate = bookDTO.publishedDate != null ? bookDTO.publishedDate : '';
+      final language = bookDTO.language != null ? bookDTO.language : '';
+      final pageCount = bookDTO.pageCount != null ? bookDTO.pageCount : 0;
+
+      var authors = new Set<Author>();
+      var categories = new Set<Category>();
+
+      if(bookDTO.authors != null){
+        authors = bookDTO.authors.map((name) => new Author(name))
+                      .toSet();
+      }
+
+      if(bookDTO.categories != null){
+        categories = bookDTO.categories.map((category) => new Category(category))
+                      .toSet();
+      }
+
+      return new Book(id, title, publishedDate, language, pageCount,
+                      authors, categories);
     }
 
     BookDTO toData(Book book){ return null;}
-
 }
