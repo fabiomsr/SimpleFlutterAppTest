@@ -1,4 +1,11 @@
 {
+  "library": "Library",
+  "@library":{
+    "description": "Label for the library screen",
+    "type": "text",
+    "placeholders": {}
+  },
+
   "tabBooks": "Books",
   "@tabBooks":{
     "description": "Label for the Books tab",

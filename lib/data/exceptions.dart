@@ -1,7 +1,7 @@
-class FetchdataException implements Exception {
+class FetchDataException implements Exception {
   String _message;
 
-  FetchdataException(this._message);
+  FetchDataException(this._message);
 
   String toString() {
     return "Exception: $_message";

@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 
 import '../constant.dart';
-import '../module/home/home_screen.dart';
+import '../module/home/home_view.dart';
 import '../strings.dart';
 import '../i18n/app_messages_all.dart';
 

@@ -45,7 +45,7 @@ class Book {
 
 class BookMapper extends Mapper<BookDTO, Book> {
 
-    Book toModel(BookDTO bookDTO){
+    Book toData(BookDTO bookDTO){
       if(bookDTO.id == null || bookDTO.title == null){
         return null;
       }
@@ -73,5 +73,5 @@ class BookMapper extends Mapper<BookDTO, Book> {
                       authors, categories);
     }
 
-    BookDTO toData(Book book){ return null;}
+    BookDTO toModel(Book book){ return null;}
 }

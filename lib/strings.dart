@@ -14,6 +14,12 @@ class AppStrings extends LocaleQueryData {
 
   AppStrings._internal();
 
+  String library() => Intl.message(
+      'LIBRARY',
+      name: 'library',
+      desc: 'Label for the library screen'
+  );
+
   String tabBooks() => Intl.message(
       'BOOKS',
       name: 'tabBooks',

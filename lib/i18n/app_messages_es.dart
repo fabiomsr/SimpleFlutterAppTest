@@ -15,6 +15,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => {
+    "library" : MessageLookupByLibrary.simpleMessage("Biblioteca"),
     "tabBooks" : MessageLookupByLibrary.simpleMessage("Libros"),
     "tabFavorites" : MessageLookupByLibrary.simpleMessage("Favoritos")
   };

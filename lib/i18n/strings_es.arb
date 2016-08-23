@@ -1,4 +1,11 @@
 {
+  "library": "Biblioteca",
+  "@library":{
+    "description": "Título para la pantalla biblioteca",
+    "type": "text",
+    "placeholders": {}
+  },
+
   "tabBooks": "Libros",
   "@tabBooks":{
     "description": "Título para la pestaña libros",
